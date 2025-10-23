@@ -1,7 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+
 
 const app = express();
 
@@ -12,7 +11,6 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB:", err));
 
-// Model Course
 
 const courseSchema = new mongoose.Schema(
   {
@@ -28,7 +26,7 @@ const courseSchema = new mongoose.Schema(
 );
 const Course = new mongoose.model("Course", courseSchema);
 
-// Routes
+
 app.get("/courses", async function (req, res) {
   try {
     const courses = await Course.find();
