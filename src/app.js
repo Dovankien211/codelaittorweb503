@@ -24,6 +24,7 @@ const courseSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
 const Course = new mongoose.model("Course", courseSchema);
 
 
